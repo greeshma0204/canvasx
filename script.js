@@ -52,7 +52,7 @@ function addBlockToCanvas(type) {
                 <li>Publication 1</li>
             </ul>
         `,
-        contact: `
+        contact: ` 
             <h2 style="color:#d9b362">Contact</h2>
             <p>Email: example@gmail.com</p>
         `,
