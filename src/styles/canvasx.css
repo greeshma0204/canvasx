@@ -1,0 +1,100 @@
+body {
+  margin: 0;
+  background: #111;
+  color: #e2bf70;
+  font-family: Arial;
+}
+
+.header {
+  padding: 20px;
+  border-bottom: 1px solid #333;
+}
+
+.header button {
+  float: right;
+}
+
+.builder {
+  display: flex;
+  height: calc(100vh - 80px);
+}
+
+.sidebar {
+  width: 260px;
+  padding: 20px;
+  border-right: 1px solid #333;
+}
+
+.library-item {
+  border: 1px solid #e2bf70;
+  padding: 12px;
+  margin-bottom: 10px;
+  cursor: grab;
+  text-align: center;
+}
+
+.export-btn {
+  background: #e2bf70;
+  color: #111;
+  width: 100%;
+  padding: 10px;
+}
+
+.canvas {
+  flex: 1;
+  padding: 40px;
+}
+
+.canvas-block {
+  border: 1px dashed #e2bf70;
+  padding: 15px;
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: space-between;
+  
+
+}
+
+
+.canvas-block input {
+  background: transparent;
+  color: #e2bf70;
+  border: none;
+  flex: 1;
+}
+
+.export-btn,
+.top-export {
+  background: linear-gradient(135deg, #d9b362, #f2d38b);
+  color: #1a1a1a;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(217,179,98,0.35);
+}
+
+.export-btn:hover,
+.top-export:hover {
+  background: linear-gradient(135deg, #f2d38b, #d9b362);
+}
+/* Editable block input area */
+.block input,
+.block textarea,
+.block [contenteditable="true"] {
+  background-color: #d9b362 !important;
+  color: #1a1a1a !important;
+  border: 1px solid #f2d38b;
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 15px;
+}
+
+/* Remove white focus background */
+.block input:focus,
+.block textarea:focus,
+.block [contenteditable="true"]:focus {
+  outline: none;
+  background-color: #f2d38b !important;
+}

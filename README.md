@@ -1,70 +1,160 @@
-# Getting Started with Create React App
+# CanvasX – Visual Web Builder Studio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+CanvasX is a web-based, drag-and-drop single-page website builder that allows users to visually create professional portfolio websites without writing code. It focuses on simplicity, smooth user experience, autosave, and one-click export to a standalone HTML file that works offline.
 
-## Available Scripts
 
-In the project directory, you can run:
 
-### `npm start`
+# Problem Statement
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Creating a clean and professional personal website or portfolio requires knowledge of HTML, CSS, and JavaScript. Many beginners and non-technical users struggle with this complexity.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+CanvasX solves this problem by providing a visual block-based editor where users can build a complete one-page website by dragging, editing, and arranging predefined sections, and exporting the result as a ready-to-use HTML file.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# Features
 
-### `npm run build`
+# Core Features
+- Drag-and-drop placement of predefined blocks
+- Block library containing:
+ - Hero Section
+ - Bio Section
+ - Gallery
+ - Publications
+ - Contact Section
+ - Footer
+- Inline text editing inside blocks
+- Reordering blocks vertically
+- Deleting blocks from the canvas
+- Autosave functionality
+- Project persistence across page reloads
+- One-click export to a standalone HTML file
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Persistence
+- Local autosave- using browser localStorage
+- Backend persistence- using Node.js, Express, and MongoDB
+- Automatic fallback to localStorage if backend is unavailable
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# Export
+- Generates a single self-contained HTML file
+- Embedded CSS and content
+- Dark theme with gold-accent outer border
+- Exported file works fully offline and matches the editor preview
+- works fully offline
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+# Tech Stack
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+# Frontend
+- React.js
+- HTML5 Drag and Drop
+- CSS (custom styling)
+- interact.js
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# Backend
+- Node.js
+- Express.js
+- REST APIs
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+# Database
+- MongoDB
+- Mongoose 
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+# Export
+- Client-side HTML generation using the Blob API
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+# Architecture Overview
 
-### Code Splitting
+CanvasX follows a client–server architecture:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- Frontend (React)
+  Handles UI rendering, drag-and-drop interactions, editing, autosave, and exporting HTML.
 
-### Analyzing the Bundle Size
+- Backend (Node.js + Express)  
+  Provides REST APIs to save and load project data.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- Database (MongoDB) 
+  Stores block data to ensure permanent project persistence.
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
+# Application Workflow
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+1. User drags blocks from the Block Library to the Canvas
+2. Blocks can be edited, reordered, or deleted
+3. All changes update React state
+4. Autosave triggers:
+   - Immediate save to localStorage
+   - Background save to MongoDB via API
+5. On page reload:
+   - Data is loaded from MongoDB
+   - Falls back to localStorage if backend is unavailable
+6. Export button generates a styled HTML file for download
 
-### Deployment
+# Folder Structure
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
+canvasx/
+├── backend/
+│   ├── models/
+│   ├── routes/
+│   └── server.js
+├── src/
+│   ├── components/
+│   │   ├── header.jsx
+│   │   ├── sidebar.jsx
+│   │   └── canvas.jsx
+│   ├── styles/
+│   │   └── canvasx.css
+│   ├── App.jsx
+│   └── index.js
+└── README.md
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# Setup Instructions
+
+# Frontend
+
+npm install
+npm start
+
+# Backend
+
+cd backend
+npm install
+node server.js
+
+## API Endpoints
+
+| POST | /save | Saves the current project blocks |
+| GET  | /load | Loads the saved project blocks |
+
+## Usage Guide
+
+- Open CanvasX editor in browser
+- Drag blocks from sidebar to canvas
+- Edit text inline
+- Reorder or delete blocks
+- Autosave runs automatically
+- Click Export to download HTML file
+
+## AI  tools and  Usage 
+- chatgpt
+AI tools were used only for:
+- Concept clarification
+- Debugging explanations
+- Documentation assistance
+## other resources
+-used MDN documents
+-youtube videos for understanding
+
+## Third-Party Libraries & Assets
+
+- React.js
+- Express.js
+- MongoDB
+- Mongoose
+- Interact.js
+
+
+
