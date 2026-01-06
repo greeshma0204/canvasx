@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # CanvasX – Visual Web Builder Studio
 
 CanvasX is a web-based, drag-and-drop single-page website builder that allows users to visually create professional portfolio websites without writing code. It focuses on simplicity, smooth user experience, autosave, and one-click export to a standalone HTML file that works offline.
